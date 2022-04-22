@@ -4,7 +4,7 @@ import { SocketContext } from "../SocketContext";
 
 
 const Videoplayer = () => {
-  const { name, callaccepted, my_video, userVideo, callEnded, stream, call } =
+  const { name, callaccepted,myVideo, userVideo, callEnded, stream, call } =
     useContext(SocketContext);
 
   return (
@@ -18,19 +18,13 @@ const Videoplayer = () => {
             <video
               playsInline
               muted
-              ref={my_video}
+              ref={myVideo}
               autoPlay
               className="my_video"
             />
           </Grid>
         </Paper>
       )}
-
-
-
-
-
-
 
       {callaccepted && !callEnded && (
         <Paper className="">
