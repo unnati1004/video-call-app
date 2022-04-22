@@ -22,7 +22,7 @@ const App=()=> {
 
 
   return (
-    <div className="wrapper"> 
+    <div className="wrapper App"> 
 
     <AppBar className="appBar" >
       <Typography variant='h2'>

@@ -10,7 +10,7 @@ const socket=io("http://localhost:8080")
 
 const ContextProvider=({children})=>{
 
-    const [stream,setstream]=useState(null)
+    const [stream,setstream]=useState()
 
     const [me, setMe] = useState("")
 
@@ -53,9 +53,9 @@ const ContextProvider=({children})=>{
 
             setcall({isRecievedCall:true,from,name:callerName,signal})
 
-        },[])
+        })
 
-    })
+    },[])
 
     const answercall=()=>{
 
@@ -137,6 +137,7 @@ const ContextProvider=({children})=>{
             calluser,
             leavecall,
             answercall
+            
 
         }}>
             {children}

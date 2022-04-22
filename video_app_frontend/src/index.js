@@ -11,7 +11,7 @@ root.render(
 
   <React.StrictMode>
 
-  <ContextProvider>
+  <ContextProvider    >
 
     <App />
 
