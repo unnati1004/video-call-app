@@ -1,3 +1,4 @@
+import { Button } from '@mui/material';
 import React, { useContext } from 'react'
 
 import { SocketContext } from "../SocketContext";
@@ -9,18 +10,18 @@ const Notifications = () => {
 
 
   return (
-    <div>
+    
       <>
         {call.isRecievedCall && !callAccepted && (
           <div styles={{ display: "flex", justifyContent: "center" }}>
             <h1> {call.name} is calling </h1>
 
-            
-            <button onClick={answercall}>Answer</button>
+
+            <Button onClick={answercall}>Answer</Button> 
           </div>
         )}
       </>
-    </div>
+   
   );
 }
 

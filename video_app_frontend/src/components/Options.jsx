@@ -70,10 +70,11 @@ const Options = ({children}) => {
                   <Button onClick={leavecall} className="opion_margin" >
                 
                     <PhoneDisabled fontSize="large" /> 
+
                     Hang Up
                   </Button>
                 ) : (
-                  <Button onClick={()=>{calluser(idtocall)}} >call</Button>
+                  <Button onClick={()=>calluser(idtocall)} >call</Button>
                 )}
 
                 {/* <button>

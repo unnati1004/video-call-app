@@ -4,7 +4,7 @@ import Peer from "simple-peer"
 
 const SocketContext=createContext()
 
-const socket=io("http://localhost:8080")
+const socket=io("https://videochapp1.herokuapp.com")
 
 
 
@@ -74,9 +74,11 @@ const ContextProvider=({children})=>{
 
         peer.on("stream",(currentstream)=>{
 
+            
             userVideo.current.srcObject=currentstream
 
-            console.log(currentstream)
+        
+            
         })
 
         peer.signal(call.signal)
@@ -96,10 +98,11 @@ const ContextProvider=({children})=>{
        peer.on("signal",(data)=>{
 
             socket.emit("calluser",{userTocall:id,signalData:data,from:me,name})
-
+            
         })
-
+        
         peer.on("stream",(currentstream)=>{
+           
 
             userVideo.current.srcObject=currentstream
         })

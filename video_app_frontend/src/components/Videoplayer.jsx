@@ -4,8 +4,11 @@ import { SocketContext } from "../SocketContext";
 
 
 const Videoplayer = () => {
-  const { name, callAccepted,myVideo, userVideo, callEnded, stream, call } =
-    useContext(SocketContext);
+  const { name, callAccepted,myVideo, userVideo, callEnded, stream, call } =useContext(SocketContext);
+
+    console.log("myvideo", myVideo)
+
+    console.log("userVideo", userVideo)
 
   return (
     <Grid container className="container_grid">
