@@ -9,12 +9,12 @@ const socket=io("http://localhost:8080")
 
 
 const ContextProvider=({children})=>{
-
-    const [stream,setstream]=useState()
-
+    
+    const [stream,setstream]=useState({})
+    
     const [me, setMe] = useState("")
-
-
+    
+    
 
     const [call, setcall] = useState({})
 
@@ -23,7 +23,8 @@ const ContextProvider=({children})=>{
     const [callEnded, setcallEnded] = useState(false)
 
     const [name, setname] = useState("")
-
+    
+    console.log(stream)
 
 
  const myVideo=useRef()
@@ -37,13 +38,13 @@ const ContextProvider=({children})=>{
 
     useEffect(()=>{
         navigator.mediaDevices.getUserMedia({video:true,audio:true}).then((currentstream)=>{
-
+            
             setstream(currentstream)
-
-            myVideo.current.srcObject=currentstream
+            
+             myVideo.current.srcObject=currentstream
 
         })
-
+            
         socket.on('me',(id)=>{
             setMe(id)
         })
@@ -74,6 +75,8 @@ const ContextProvider=({children})=>{
         peer.on("stream",(currentstream)=>{
 
             userVideo.current.srcObject=currentstream
+
+            console.log(currentstream)
         })
 
         peer.signal(call.signal)
@@ -82,10 +85,11 @@ const ContextProvider=({children})=>{
         connectionRef.current=peer;
 
 
-    }
+    };
 
 
     const calluser=(id)=>{
+
           const peer=new Peer({initiator:true,trickel:false,stream})
 
 
@@ -94,8 +98,6 @@ const ContextProvider=({children})=>{
             socket.emit("calluser",{userTocall:id,signalData:data,from:me,name})
 
         })
-
-
 
         peer.on("stream",(currentstream)=>{
 
@@ -113,6 +115,8 @@ const ContextProvider=({children})=>{
         connectionRef.current=peer
 
     }
+
+
     const leavecall=()=>{
         setcallEnded(true)
 

@@ -45,8 +45,7 @@ io.on('connection',(socket)=>{
     socket.on("answercall",(data)=>{
 
         io.to(data.to).emit("callaccepted",data.signal)
-        
-
+    
     })
 
 
@@ -57,7 +56,7 @@ io.on('connection',(socket)=>{
 
 server.listen(port, async () => {
     try {
-        await connect();
+         await connect();
         console.log(`Listing on port ${port}`);
     } catch (error) {
         console.log(error);
