@@ -1,42 +1,32 @@
 .App {
   text-align: center;
-  background-image: linear-gradient(to right, rgba(255, 0, 0, 0), rgb(200, 219, 29));
+  background: transparent;
   margin: auto;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   border-radius: 10px;
-
-
-  width: 50%;
+  width: 100%;
 }
 
 body {
-    background:
+    /* background:
     linear-gradient(
       rgba(210, 0, 255, 0.3), 
       rgba(0, 230, 0, 0.3)
-    );
+    ); */
+    background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
 }
-
-/* * {
-    margin: 0;
-    padding: 0;
-} */
-
 .appBar{
     border-radius: 15;
     display: flex;
-    margin: auto;
     flex-direction:row;
     justify-content: center;
     align-items: center;
     width: 100%;
-    border: 1px solid black;
-    
-
-    
+    box-sizing: border-box;
+    margin-bottom: 5vw;
   }
 
    .wrapper{
@@ -44,10 +34,30 @@ body {
     flex-direction:column;
     align-items:center;
     width: 80%;
-    margin:auto;
+    margin: auto;
+    margin-bottom: 10vw;
+    padding: 2vw;
+    background-color: transparent;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    border-radius: 5px;
   }
-
+  
   .container_grid{
-
+    /* border: 10px solid green; */
+    text-align: center;
     justify-content: center;
   }
+  
+  .container_grid>*{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    background-color: #1976d2;
+    color: white;
+    text-transform: uppercase;
+  }
+
+  .my_video{
+    width: 100%;
+  }
+

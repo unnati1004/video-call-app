@@ -9,64 +9,53 @@ import {
   Paper,
 } from "@mui/material";
 
-import{CopyToClipboard} from "react-copy-to-clipboard"
+import { CopyToClipboard } from "react-copy-to-clipboard"
 
-import{Assignment,Phone,PhoneDisabled} from "@mui/icons-material" 
+import { Assignment, Phone, PhoneDisabled } from "@mui/icons-material"
 
- import{SocketContext} from "../SocketContext";
+import { SocketContext } from "../SocketContext";
 
- import { makeStyles } from '@mui/styles';
+import { makeStyles } from '@mui/styles';
 
- const usestyles = makeStyles({
-   root: {
-     display: "flex",
-     flexDirection: "column",
-   },
-   gridContainer: {
-     width: "100%",
+const usestyles = makeStyles(() => ({
+  root: {
+    display: "flex",
+    flexDirection: "column",
+  },
+  gridContainer: {
+    width: "100%",
     //  [theme.breakpoints.down("xs")]: {
     //    flexDirection: "column",
     //  },
-   },
-   container: {
-     width: "600px",
-     margin: "35px 0",
-     padding: 0,
+  },
+  container: {
+    width: "80%",
+    margin: "35px 0",
+    padding: 0,
+    borderRadius: "10px"
     //  [theme.breakpoints.down("xs")]: {
     //    width: "80%",
     //  },
-   },
-   margin: {
-     marginTop: 20,
-   },
-   padding: {
-     padding: 20,
-   },
-   paper: {
-     padding: "10px 20px",
-     border: "2px solid black",
-   },
- });
+  },
+  margin: {
+    margin: '20 auto 0',
+  },
+  padding: {
+    padding: 20,
+  },
+  paper: {
+    padding: "10px 20px",
+    border: "1px solid #0d0d0d47",
+  }
+}));
 
+const Options = ({ children }) => {
 
+  const classes = usestyles();
 
+  const { me, callAccepted, name, setname, callEnded, leavecall, calluser } = useContext(SocketContext)
 
-
-
-
-
-const Options = ({children}) => {
-
-  const classes=usestyles() 
-
-
-
-  const {me,callAccepted,name,setname,callEnded,leavecall,calluser} =useContext(SocketContext)
-
-  const [idtocall,setidtocall]=useState("")
-
-
-
+  const [idtocall, setidtocall] = useState("");
 
   return (
     <Container className={classes.container}>
@@ -83,13 +72,18 @@ const Options = ({children}) => {
                 onChange={(e) => setname(e.target.value)}
                 fullWidth
               />
+
               <CopyToClipboard text={me} className={classes.margin}>
-                <Button variant="contained" fullWidth>
+                <Button variant="contained" className='option-btn'>
+
                   <Assignment fontSize="large" />
                   copy Your ID
+
                 </Button>
               </CopyToClipboard>
+
             </Grid>
+
             <Grid item xs={12} md={6} className={classes.padding}>
               <Typography gutterBottom variant="h6">
                 Make a Call
@@ -100,34 +94,21 @@ const Options = ({children}) => {
                 onChange={(e) => setidtocall(e.target.value)}
                 fullWidth
               />
-              {console.log(callAccepted, callEnded)}
               {callAccepted && !callEnded ? (
                 <Button
                   onClick={leavecall}
                   variant="contained"
-                  className={classes.margin}
-
-                  fullWidth
-
+                  className={`${classes.margin}`}
                 >
                   <PhoneDisabled fontSize="large" />
                   Hang Up
                 </Button>
               ) : (
-                <Button variant="contained" onClick={() => calluser(idtocall)} fullWidth >
+                <Button variant="contained" className={`${classes.margin}`} onClick={() => calluser(idtocall)}  >
                   <Phone fontSize="large" /> call
                 </Button>
               )}
 
-              {/* <button>
-                  <Assignment fontSize="large" />
-                </button> */}
-              {/* <Button
-                  // variant="contained"
-                  // color="primmary"
-                  // fullWidth
-                  staeIcons={<Assignment fontSize="large" />}
-                ></Button> */}
             </Grid>
           </Grid>
         </form>

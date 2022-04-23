@@ -1,5 +1,5 @@
 import './App.css';
-import {AppBar, Typography} from '@mui/material'
+import { AppBar, Typography } from '@mui/material'
 import Videoplayer from './components/Videoplayer';
 import Options from './components/Options';
 import Notifications from './components/Notifications';
@@ -9,33 +9,25 @@ import Notifications from './components/Notifications';
 
 
 
-const App=()=> {
+const App = () => {
 
 
+  return (<div>
 
-
-  return (
-    <div className="wrapper App"> 
-
-    <AppBar className="appBar" >
+    <AppBar className="appBar" position='static'>
       <Typography variant='h2'>
-         Video chat 
+        Video chat
       </Typography>
-
     </AppBar>
 
-
+    <div className="wrapper">
       <Videoplayer />
-
       <Options>
-
-        <Notifications/>
-
+        <Notifications />
       </Options>
-
-
-     
     </div>
+    
+  </div>
   );
 }
 

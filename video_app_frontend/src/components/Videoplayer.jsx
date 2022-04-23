@@ -6,17 +6,12 @@ import { SocketContext } from "../SocketContext";
 const Videoplayer = () => {
   const { name, callAccepted,myVideo, userVideo, callEnded, stream, call } =useContext(SocketContext);
 
-    // console.log("myvideo", myVideo)
-
-    // console.log("userVideo", userVideo)
-
   return (
     <Grid container 
      className="container_grid"
     >
 
       {stream && (
-        <Paper className="">
           <Grid items xs={12} md={6}>
             <Typography variant="h5" gutterBottom>
               {name || "name"}
@@ -29,12 +24,10 @@ const Videoplayer = () => {
               className="my_video"
             />
           </Grid>
-        </Paper>
       )}
 
 
       {callAccepted && !callEnded && (
-        <Paper className="">
           <Grid items xs={12} md={6}>
             <Typography variant="h5" gutterBottom>
               {call.name || "name"}
@@ -47,7 +40,6 @@ const Videoplayer = () => {
               className="my_video"
             />
           </Grid>
-        </Paper>
       )}
 
 

@@ -26,10 +26,8 @@ const ContextProvider = ({ children }) => {
 
 
     const myVideo = useRef()
-    console.log("myVideo", myVideo);
 
     const userVideo = useRef()
-    console.log("userVideo", userVideo);
 
     const connectionRef = useRef()
 
@@ -60,7 +58,6 @@ const ContextProvider = ({ children }) => {
 
     const answercall = () => {
 
-        console.log("answer call")
         setcallAccepted(true)
 
         const peer=new Peer({initiator:false,trickle:false,stream})
