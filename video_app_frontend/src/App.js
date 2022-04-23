@@ -19,8 +19,11 @@ const App=()=> {
 
     <AppBar className="appBar" >
       <Typography variant='h2'>
-        {/* Video chat */}
+         Video chat 
       </Typography>
+
+    </AppBar>
+
 
       <Videoplayer />
 
@@ -29,8 +32,6 @@ const App=()=> {
         <Notifications/>
 
       </Options>
-
-    </AppBar>
 
 
      
