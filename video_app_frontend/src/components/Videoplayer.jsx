@@ -11,9 +11,9 @@ const Videoplayer = () => {
     // console.log("userVideo", userVideo)
 
   return (
-    <Grid container className="container_grid">
-
-
+    <Grid container 
+     className="container_grid"
+    >
 
       {stream && (
         <Paper className="">
@@ -47,8 +47,6 @@ const Videoplayer = () => {
               className="my_video"
             />
           </Grid>
-
-
         </Paper>
       )}
 
