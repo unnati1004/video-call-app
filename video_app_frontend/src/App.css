@@ -1,0 +1,52 @@
+.App {
+  text-align: center;
+  background-image: linear-gradient(to right, rgba(255, 0, 0, 0), rgb(200, 219, 29));
+  margin: auto;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 10px;
+
+
+  width: 50%;
+}
+
+body {
+    background:
+    linear-gradient(
+      rgba(210, 0, 255, 0.3), 
+      rgba(0, 230, 0, 0.3)
+    );
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+/* * {
+    margin: 0;
+    padding: 0;
+} */
+
+.appBar{
+    border-radius: 15;
+    display: flex;
+    margin: auto;
+    flex-direction:row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border: 1px solid black;
+
+    
+  }
+
+   .wrapper{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    width: 80%;
+    margin:auto;
+  }
+
+  .container_grid{
+
+    justify-content: center;
+  }
