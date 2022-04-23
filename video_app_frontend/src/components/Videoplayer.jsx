@@ -7,11 +7,9 @@ const Videoplayer = () => {
   const { name, callAccepted,myVideo, userVideo, callEnded, stream, call } =useContext(SocketContext);
 
   return (
-    <Grid container 
-     className="container_grid"
-    >
-
-      {stream && (
+    <>
+      <Grid container className="container_grid">
+        {stream && (
           <Grid items xs={12} md={6}>
             <Typography variant="h5" gutterBottom>
               {name || "name"}
@@ -24,10 +22,9 @@ const Videoplayer = () => {
               className="my_video"
             />
           </Grid>
-      )}
+        )}
 
-
-      {callAccepted && !callEnded && (
+        {callAccepted && !callEnded && (
           <Grid items xs={12} md={6}>
             <Typography variant="h5" gutterBottom>
               {call.name || "name"}
@@ -40,12 +37,11 @@ const Videoplayer = () => {
               className="my_video"
             />
           </Grid>
-      )}
+        )}
+      </Grid>
 
-
-
-
-    </Grid>
+      
+    </>
   );
 };
 

@@ -19,7 +19,8 @@ const Notifications = () => {
             justifyContent: "center",
           }}
         >
-          <h1> {call.name ? call.name : "Somone"} is calling</h1>
+
+          <h1> {call.name ? call.name : "Someone"} is calling</h1>
 
           <Button variant="contained" onClick={answercall}>
             Answer
