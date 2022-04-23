@@ -47,8 +47,6 @@ const Videoplayer = () => {
               className="my_video"
             />
           </Grid>
-
-
         </Paper>
       )}
 
