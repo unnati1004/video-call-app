@@ -10,18 +10,23 @@ const Notifications = () => {
 
 
   return (
-    
-      <>
-        {call.isRecievedCall && !callAccepted && (
-          <div styles={{ display: "flex", justifyContent: "center" }}>
-            <h1> {call.name} is calling </h1>
+    <>
+      {call.isRecievedCall && !callAccepted && (
+        <div
+          styles={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "center",
+          }}
+        >
+          <h1> {call.name ? call.name : "Somone"} is calling</h1>
 
-
-            <Button onClick={answercall}>Answer</Button> 
-          </div>
-        )}
-      </>
-   
+          <Button variant="contained" onClick={answercall}>
+            Answer
+          </Button>
+        </div>
+      )}
+    </>
   );
 }
 

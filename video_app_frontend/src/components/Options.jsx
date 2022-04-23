@@ -38,7 +38,11 @@ const usestyles = makeStyles(() => ({
     //  },
   },
   margin: {
-    margin: '20 auto 0',
+
+    // margin: '20 auto 0',
+    marginTop: '20px',
+    // alignSelf:"center",
+
   },
   padding: {
     padding: 20,
@@ -73,15 +77,16 @@ const Options = ({ children }) => {
                 fullWidth
               />
 
-              <CopyToClipboard text={me} className={classes.margin}>
-                <Button variant="contained" className='option-btn'>
-
+              <CopyToClipboard text={me}>
+                <Button
+                  variant="contained"
+                  // className='option-btn'
+                  className={classes.margin}
+                >
                   <Assignment fontSize="large" />
                   copy Your ID
-
                 </Button>
               </CopyToClipboard>
-
             </Grid>
 
             <Grid item xs={12} md={6} className={classes.padding}>
@@ -96,19 +101,23 @@ const Options = ({ children }) => {
               />
               {callAccepted && !callEnded ? (
                 <Button
+                  color="warning"
                   onClick={leavecall}
                   variant="contained"
-                  className={`${classes.margin}`}
+                  className={classes.margin}
                 >
                   <PhoneDisabled fontSize="large" />
                   Hang Up
                 </Button>
               ) : (
-                <Button variant="contained" className={`${classes.margin}`} onClick={() => calluser(idtocall)}  >
+                <Button
+                  variant="contained"
+                  className={classes.margin}
+                  onClick={() => calluser(idtocall)}
+                >
                   <Phone fontSize="large" /> call
                 </Button>
               )}
-
             </Grid>
           </Grid>
         </form>
